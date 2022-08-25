@@ -8,7 +8,7 @@ function App() {
       .then((res) => res.text())
       .then((data) => setMessage(data));
   }, []);
-  return <div className="App">birdonation:{message}</div>;
+  return <div className="App">birdonation!!!:{message}</div>;
 }
 
 export default App;
