@@ -1,14 +1,21 @@
 import "./App.css";
-import { useEffect, useState } from "react";
+import React from "react";
+import { useState } from "react";
+
+import List from "./list";
+import Header from "./Header";
+import Entry from "./entry";
+import Footer from "./Footer";
 
 function App() {
-  const [message, setMessage] = useState();
-  useEffect(() => {
-    fetch("/api")
-      .then((res) => res.text())
-      .then((data) => setMessage(data));
-  }, []);
-  return <div className="App">birdonation!!!:{message}</div>;
+  return (
+    <div className="App">
+      <Header />
+      <Entry />
+      <List />
+      <Footer />
+    </div>
+  );
 }
 
 export default App;
