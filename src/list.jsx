@@ -1,13 +1,27 @@
-import React from "react";
+import React, { startTransition } from "react";
 
-const List = () => {
-  const getLists = () => {
-    const list = fetch("/goodlists").then((data) => {});
-  };
+const List = ({ setView, lists }) => {
+  function lineUpLists() {
+    return lists.map((list) => {
+      return (
+        <div>
+          <p>{list}</p>
+        </div>
+      );
+    });
+  }
 
   return (
     <div>
-      <h1>Listです!</h1>
+      {lineUpLists()}
+      {lists[3]}
+      <button
+        onClick={() => {
+          setView("entry");
+        }}
+      >
+        entryへ
+      </button>
     </div>
   );
 };

@@ -13,6 +13,8 @@ const setupServer = () => {
     return knex
       .select()
       .from("goods")
+      .orderBy("created_at", "desc")
+      .limit(15)
       .then((data) => {
         res.status(200).send(data);
       });
@@ -26,13 +28,13 @@ const setupServer = () => {
       });
   });
 
-  app.delete("/goodlists/:id", (req, res) => {
-    const id = Number(req.params.id);
-    return knex("goods")
-      .where("id", id)
-      .del()
-      .then(() => res.status(204).send());
-  });
+  // app.delete("/goodlists/:id", (req, res) => {
+  //   const id = Number(req.params.id);
+  //   return knex("goods")
+  //     .where("id", id)
+  //     .del()
+  //     .then(() => res.status(204).send());
+  // });
 
   return app;
 };

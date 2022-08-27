@@ -1,43 +1,35 @@
 import React from "react";
 import { useState } from "react";
 
-const Entry = () => {
-  const [text, setText] = useState("");
-  const [Submit, isSubmited] = useState(false);
-
-  const sendData = () => {
-    const body = { text };
-
-    fetch("/goodlists", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(body),
-    })
-      .then(() => {
-        setText("");
-        isSubmited(true);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
+const Entry = ({ setView, sendData, setText }) => {
+  function handleSubmit(e) {
+    sendData();
+  }
 
   return (
     <div>
-      <input
-        type="text"
-        placeholder="a bird a day !!"
-        onChange={(e) => {
-          setText(e.target.value);
+      <form
+        onSubmit={(e) => {
+          handleSubmit();
         }}
-      />
-      <input
-        type="submit"
-        value="tweet"
+      >
+        <input
+          type="text"
+          placeholder="a bird a day !!"
+          onChange={(e) => {
+            setText(e.target.value);
+          }}
+        />
+        <input type="submit" value="submit" />
+      </form>
+
+      <button
         onClick={() => {
-          sendData();
+          setView("list");
         }}
-      />
+      >
+        listを見る
+      </button>
     </div>
   );
 };
