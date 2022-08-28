@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import "./entry.css";
 
 const Entry = ({ setView, sendData, setText }) => {
   function handleSubmit(e) {
@@ -7,30 +8,52 @@ const Entry = ({ setView, sendData, setText }) => {
   }
 
   return (
-    <div>
-      <form
-        onSubmit={(e) => {
-          handleSubmit();
-        }}
-      >
-        <input
-          type="text"
-          placeholder="a bird a day !!"
-          onChange={(e) => {
-            setText(e.target.value);
+    <main>
+      <form>
+        <div className="iptxt">
+          <input
+            type="text"
+            placeholder="今日どんな良いことした?"
+            onChange={(e) => {
+              setText(e.target.value);
+            }}
+          />
+        </div>
+
+        <a
+          id="regi_btn"
+          href="#"
+          className="reset flat fade"
+          onClick={(e) => {
+            handleSubmit();
+            setView("bird");
           }}
-        />
-        <input type="submit" value="submit" />
+        >
+          登録
+        </a>
       </form>
 
-      <button
-        onClick={() => {
-          setView("list");
-        }}
-      >
-        listを見る
-      </button>
-    </div>
+      <div className="buttons">
+        <a
+          href="#"
+          className="reset flat fade"
+          onClick={() => {
+            setView("list");
+          }}
+        >
+          記録
+        </a>
+        <a
+          href="#"
+          className="reset flat fade"
+          onClick={() => {
+            setView("list");
+          }}
+        >
+          来世
+        </a>
+      </div>
+    </main>
   );
 };
 

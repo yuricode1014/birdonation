@@ -5,7 +5,7 @@ const List = ({ setView, lists }) => {
     return lists.map((list) => {
       return (
         <div>
-          <p>{list}</p>
+          <p>🐦{list}</p>
         </div>
       );
     });
@@ -13,15 +13,14 @@ const List = ({ setView, lists }) => {
 
   return (
     <div>
-      {lineUpLists()}
-      {lists[3]}
       <button
         onClick={() => {
           setView("entry");
         }}
       >
-        entryへ
+        entry
       </button>
+      {lineUpLists()}
     </div>
   );
 };

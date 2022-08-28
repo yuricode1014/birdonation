@@ -14,7 +14,7 @@ const setupServer = () => {
       .select()
       .from("goods")
       .orderBy("created_at", "desc")
-      .limit(15)
+      .limit(20)
       .then((data) => {
         res.status(200).send(data);
       });

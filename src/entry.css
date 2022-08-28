@@ -1,0 +1,45 @@
+iptxt {
+	position: relative;
+	width: 70%;
+	margin: 40px 3%;
+}
+.iptxt input[type=text] {
+	font: 15px/24px sans-serif;
+	box-sizing: border-box;
+	width: 60%;
+	margin: 10px 0;
+	padding: 0.3em;
+	border: 0px solid #c4c2b7;
+	border-radius: 20px;
+	outline: none;
+}
+
+.iptxt input[type=text] {
+	padding-left: 20px;
+}
+
+
+.buttons {
+    margin: 40px;
+    text-align: center;
+    font-size: 13px;
+    font-weight: bold;
+  }
+
+  a {
+    color: #fff;
+    background: #dec79c;
+    padding: 10px 30px;
+    margin: 5px;
+    display: inline-block;
+    border-radius: 20px;
+    text-decoration: none;
+  }
+
+  #regi_btn{
+    background: #e0a33b;
+    border-radius: 20px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 13px
+  }
