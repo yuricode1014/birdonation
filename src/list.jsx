@@ -5,24 +5,13 @@ const List = ({ setView, lists }) => {
     return lists.map((list) => {
       return (
         <div>
-          <p>🐦{list}</p>
+          <p>🕊 {list}</p>
         </div>
       );
     });
   }
 
-  return (
-    <div>
-      <button
-        onClick={() => {
-          setView("entry");
-        }}
-      >
-        entry
-      </button>
-      {lineUpLists()}
-    </div>
-  );
+  return <div>{lineUpLists()}</div>;
 };
 
 export default List;

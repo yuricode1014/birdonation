@@ -5,6 +5,7 @@ import List from "./list";
 import Header from "./header";
 import Entry from "./entry";
 import FlyBird from "./flybird";
+import NextLife from "./nextLife";
 
 function App() {
   const [currentView, setCurrentView] = useState("entry");
@@ -52,16 +53,17 @@ function App() {
       <Entry setView={setView} sendData={sendData} setText={setText} />
     ) : currentView === "list" ? (
       <List setView={setView} lists={lists} setLists={setLists} />
-    ) : (
+    ) : currentView === "bird" ? (
       <FlyBird setView={setView} />
+    ) : (
+      <NextLife count={count} />
     );
   }
 
   return (
     <div className="App">
-      <Header currentView={currentView} />
+      <Header currentView={currentView} setView={setView} />
       {handleView()}
-      <img id="bird" src="../birdnation-bird.gif" />
     </div>
   );
 }

@@ -47,11 +47,16 @@ const Entry = ({ setView, sendData, setText }) => {
           href="#"
           className="reset flat fade"
           onClick={() => {
-            setView("list");
+            setView("nextLife");
           }}
         >
           来世
         </a>
+      </div>
+
+      <img id="fence" src="../081130.png" />
+      <div className>
+        <img id="bird_stay" src="../birdnation-bird.gif" />
       </div>
     </main>
   );
